@@ -34,6 +34,12 @@ const { title } = Astro.props;
 
 	html {
 		font-size: 62.5%; /* 1rem = 10px */
+		box-sizing: border-box;
+	}
+	*,
+	*::after,
+	*::before {
+		box-sizing: inherit;
 	}
 
 	body {
@@ -55,5 +61,10 @@ const { title } = Astro.props;
 	.container {
 		max-width: 120rem;
 		margin: 0 auto;
+	}
+
+	.title {
+		text-align: center;
+		font-size: 3.8rem;
 	}
 </style>
