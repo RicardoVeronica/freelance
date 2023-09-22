@@ -1,9 +1,22 @@
 ---
-
+const { name, profession } = Astro.props;
 ---
 
 <header>
     <h1 class="title">
-        Ricardo Veronica Duran <span>Desarrollo Web</span>
+        {name}
+        {" "}
+        <span>{profession}</span>
     </h1>
 </header>
+
+<style>
+    .title {
+        text-align: center;
+        font-size: 3.8rem;
+    }
+
+    .title span {
+        font-size: 2rem;
+    }
+</style>
