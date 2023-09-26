@@ -1,42 +1,43 @@
 ---
-
+// responsive nav menu
+// hover
 ---
 
 <div class="nav-bg">
-    <nav class="container nav">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/clients">Clients</a>
-        <a href="/contact">Contact</a>
-    </nav>
+  <nav class="container nav">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/clients">Clients</a>
+    <a href="/contact">Contact</a>
+  </nav>
 </div>
 
 <style>
+  .nav-bg {
+    background-color: var(--secondary);
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  @media (min-width: 768px) {
     .nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      flex-direction: row;
+      justify-content: space-around;
     }
-    @media (min-width: 768px) {
-        .nav {
-            flex-direction: row;
-            justify-content: space-around;
-        }
-    }
+  }
 
-    .nav a {
-        color: var(--white);
-        text-decoration: none;
-        font-size: 2rem;
-        font-weight: bold;
-        padding: 1rem;
-    }
-    .nav a:hover {
-        background-color: var(--primary);
-        color: var(--black);
-    }
-
-    .nav-bg {
-        background-color: var(--secondary);
-    }
+  .nav a {
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--white);
+    text-decoration: none;
+  }
+  .nav a:hover {
+    background-color: var(--primary);
+    color: var(--black);
+  }
 </style>
