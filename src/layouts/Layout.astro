@@ -1,4 +1,8 @@
 ---
+// custom properties
+// background gradients
+// rems hack
+
 import "../styles/normalize.css";
 
 interface Props {
@@ -30,6 +34,7 @@ const { title } = Astro.props;
     --secondary: #0097a7;
     --white: #ffffff;
     --gray: #757575;
+    --light-gray: #dfe9f3;
     --black: #212121;
   }
 
@@ -44,6 +49,11 @@ const { title } = Astro.props;
   }
 
   body {
+    background-image: linear-gradient(
+      to top,
+      var(--light-gray) 0%,
+      var(--white) 100%
+    );
     font-size: 16px; /* 1rem = 10px */
     font-family:
       system-ui,
@@ -80,5 +90,13 @@ const { title } = Astro.props;
   .container {
     max-width: 120rem;
     margin: 0 auto;
+  }
+
+  .shadow {
+    box-shadow: -7px 10px 17px -10px rgba(10, 10, 10, 1);
+    background-color: var(--white);
+    padding: 2rem;
+    margin-top: 1.5rem;
+    border-radius: 1rem;
   }
 </style>
