@@ -1,37 +1,123 @@
 ---
+import Button from "./Button.astro";
 
+// width min
 ---
 
 <section>
   <h2>Contact</h2>
 
-  <form action="#">
+  <form class="form" action="#">
     <fieldset>
       <legend>Full all fields and contact me</legend>
 
-      <div>
-        <label for="">Name</label>
-        <input type="text" placeholder="Your Name" />
+      <div class="field-container">
+        <div class="field">
+          <label for="">Name</label>
+          <input class="normal-input" type="text" placeholder="Your Name" />
+        </div>
+
+        <div class="field">
+          <label for="">Whatsapp</label>
+          <input
+            class="normal-input"
+            type="tel"
+            placeholder="Your Watsapp Number"
+          />
+        </div>
+
+        <div class="field">
+          <label for="">Email</label>
+          <input class="normal-input" type="email" placeholder="Your Email" />
+        </div>
+
+        <div class="field">
+          <label for="">Messsge</label>
+          <textarea class="normal-input"></textarea>
+        </div>
       </div>
 
-      <div>
-        <label for="">Whatsapp</label>
-        <input type="tel" placeholder="Your Watsapp Number" />
-      </div>
-
-      <div>
-        <label for="">Email</label>
-        <input type="email" placeholder="Your Email" />
-      </div>
-
-      <div>
-        <label for="">Messsge</label>
-        <textarea></textarea>
-      </div>
-
-      <div>
-        <input type="submit" value="Send" />
+      <div class="field">
+        <input class="button" type="submit" value="Send" />
       </div>
     </fieldset>
   </form>
+
+  <style>
+    .form {
+      margin: 0 auto;
+      padding: 2rem;
+      border-radius: 1rem;
+      width: min(60rem, 100%); /* 60rem or the 100% of the devise */
+      background-color: var(--gray);
+    }
+
+    .form fieldset {
+      border: none;
+    }
+
+    .form legend {
+      margin-bottom: 2rem;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    .normal-input {
+      border: none;
+      width: 100%;
+      border-radius: 1rem;
+      padding: 1.5rem;
+    }
+
+    .field {
+      margin-bottom: 1rem;
+    }
+
+    .field textarea {
+      height: 20rem;
+      resize: none;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 1rem;
+      font-weight: bold;
+      color: var(--white);
+    }
+
+    @media (min-width: 768px) {
+      .field-container {
+        display: grid;
+        grid-template-rows: auto auto 20rem;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1rem;
+      }
+
+      .field:nth-child(3),
+      .field:nth-child(4) {
+        grid-column: 1 / 3;
+      }
+    }
+
+    .button {
+      width: 100%;
+      padding: 1rem 3rem;
+      margin-top: 3rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 2rem;
+      font-weight: bold;
+      text-decoration: none;
+      text-transform: uppercase;
+      text-align: center;
+      color: var(--white);
+      background-color: var(--secondary);
+    }
+    .button:hover {
+      cursor: pointer;
+    }
+  </style>
 </section>
